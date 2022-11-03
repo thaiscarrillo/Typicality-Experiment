@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            assignment2
+        </title>
+        
+        <script src="https://unpkg.com/jspsych@7.3.0"></script>
+        <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@1.1.1"></script>
+        <script src="https://unpkg.com/@jspsych/plugin-html-button-response@1.1.1"></script>
+        <script src="https://unpkg.com/@jspsych/plugin-survey-text@1.1.1"></script>
+        <link href="https://unpkg.com/jspsych@7.3.0/css/jspsych.css" rel="stylesheet" type="text/css" />
+        <script src="https://unpkg.com/@jspsych/plugin-preload@1.1.1"></script>
+        <script src="list1.js"></script>
+        <script src="list2.js"></script>
+        <script src="list3.js"></script>
+        <script src="list4.js"></script>
+        <script src="practice.js"></script>
+    
+    </head>
+    <body>
+        <script> 
+        const jsPsych = initJsPsych({
+                on_finish: function() {
+                jsPsych.data.displayData();
+
+            }
+            });
+            
+            var subject_id = Math.floor(Math.random()*100000);
+            
+            var instruct1 = {
+                type: jsPsychHtmlButtonResponse,
+                stimulus: 'Welcome to the experiment! You will be presented with a trivia question which will be immediately followed by a word. Then, you will be asked if you know the answer, don’t know the answer, have another word in mind, or if the answer is at the tip of your tongue. Once you indicate your state, you will be are asked to type in your answer. First there will be five practice trials. Please press the button to proceed.',
+                choices: '>',
+                trial_duration: 20000,
+                typeoftrial: 'instruct',
+                data: {
+                typeoftrial: 'instruct',
+                list_number: jsPsych.timelineVariable('list'),
+                trialcondition: jsPsych.timelineVariable('prime_condition'),
+                subject: subject_id
+                }
+            };
+
+            var sentence = {
+               type: jsPsychHtmlKeyboardResponse,
+               stimulus: jsPsych.timelineVariable('prompt'),
+               choices: "NO_KEYS",
+               trial_duration: 5000,
+               data: {
+               typeoftrial: 'sentence',
+               list_number: jsPsych.timelineVariable('list'),
+               trialcondition: jsPsych.timelineVariable('prime_condition'),
+               subject: subject_id
+               }
+            }
+
+
+            var prime = {
+               type: jsPsychHtmlKeyboardResponse,
+               stimulus: jsPsych.timelineVariable('prime_given'),
+               choices: "NO_KEYS",
+               trial_duration: 250,
+               data: {
+               typeoftrial: 'sentence',
+               list_number: jsPsych.timelineVariable('list'),
+               trialcondition: jsPsych.timelineVariable('prime_condition'),
+               subject: subject_id
+            }
+           }
+
+            var state = {
+               type: jsPsychHtmlButtonResponse,
+               stimulus : " ",
+               choices: ['Know', 'Do not Know', 'Other word in mind', 'Tip of the tongue'],
+               data: {
+               typeoftrial: 'button',
+               list_number: jsPsych.timelineVariable('list'),
+               trialcondition: jsPsych.timelineVariable('prime_condition'),
+               subject: subject_id
+               }
+           }
+
+            var response1 = {
+               type: jsPsychSurveyText,
+               questions: [
+                   {prompt: 'Please type your answer.'}
+               ],
+               data: {
+               typeoftrial: 'response',
+               list_number: jsPsych.timelineVariable('list'),
+               trialcondition: jsPsych.timelineVariable('prime_condition'),
+               subject: subject_id, 
+               
+               },
+               on_finish: function(data){
+                    // score the response as correct or incorrect.
+                    if(jsPsych.pluginAPI.compareKeys(data.response, jsPsych.timelineVariable('target'))){
+                    data.correct = true;
+                    }
+                    else {
+                    data.correct = false;
+                    }
+                }
+            }
+
+            // i can't get the data.response to work. error says it needs to be a key string or null
+
+           var feedback = {
+                type: jsPsychHtmlKeyboardResponse,
+                stimulus: function(){
+                    var last_trial_correct = jsPsych.data.get().last(1).values()[0].correct;
+                    if(last_trial_correct){return "CORRECT!"; }
+                    else {
+                    return "WRONG!";
+                    }
+                },
+            choices : "NO_KEYS",
+            trial_duration: 2000
+            };
+            
+        
+            var instruct2 = {
+                type: jsPsychHtmlKeyboardResponse,
+                stimulus: 'You are about to begin the actual experiment.',
+                choices: 'NO_KEYS',
+                trial_duration: 5000,
+                data: {
+                typeoftrial: 'instruct',
+                list_number: jsPsych.timelineVariable('list'),
+                trialcondition: jsPsych.timelineVariable('prime_condition'),
+                subject: subject_id
+                }
+            };
+
+            var practice_procedure = {
+                timeline: [sentence, prime, state, sentence, response1, feedback],
+                timeline_variables: practice,
+                randomize_order: true
+            };
+
+            var end_experiment = {
+               type: jsPsychHtmlKeyboardResponse,
+               stimulus: 'Thank you for participating! Click any key to end the experiment.',
+               data: {
+               typeoftrial: 'end',
+               list_number: jsPsych.timelineVariable('list'),
+               trialcondition: jsPsych.timelineVariable('prime_condition'),
+               subject: subject_id
+           }
+           };
+
+
+            var list = [1,2,3,4]
+            var CONDITION = list[Math.floor(Math.random() * list.length)];
+            
+            var teststimuli = []
+            if(CONDITION == 1){teststimuli = list1}
+            else if(CONDITION == 2){teststimuli = list2}
+            else if(CONDITION == 3){teststimuli = list3}
+            else{teststimuli = list4}
+
+            console.log("list=", list)
+            console.log("CONDITION=", CONDITION)
+            console.log("teststimuli=", teststimuli)
+
+            var experiment_procedure = {
+               timeline: [sentence, prime, state, sentence, response1],
+               timeline_variables: teststimuli,
+               randomize_order: true
+           };
+
+
+
+           jsPsych.run([instruct1, practice_procedure, instruct2, experiment_procedure, end_experiment]);
+
+
+        </script>
+    
+
+
+    </body>
+</html>
