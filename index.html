@@ -14,12 +14,10 @@
     <script src="https://unpkg.com/@jspsych/plugin-call-function@1.1.1"></script>
     <script src="https://unpkg.com/@jspsych/plugin-preload@1.1.1"></script>
     <link href="https://unpkg.com/jspsych@7.1.2/css/jspsych.css" rel="stylesheet" type="text/css" />
-    <script src="practice_stimuli.js"></script>
     <script src="list1.js"></script>
     <script src="list2.js"></script>
     <script src="list3.js"></script>
     <script src="list4.js"></script>
-    <script src="images.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
   </head>
   <body></body>
@@ -43,8 +41,7 @@ var consent_trial = {
   <p style="font-size:20px;"> Welcome! Thank you for your interest in our study. </p>
   <p style="font-size:20px;"> This study is being conducted by researchers at Bowdoin College.</p>
   <p style="font-size:20px;"> In this experiment, you will be asked to make judgments about the content of different sentences.</p>
-  <p style="font-size:20px;"> The entire experiment should not last more than 30 minutes. You will be paid $3.5 USD for your participation. </p>
-  <p style="font-size:20px;"> Please click <a href = "https://drive.google.com/file/d/1m56PqqGRMrcjHjT3BssO_IP3OhI6QUvY/view?usp=share_link" target = "_blank">here</a> to read the full consent form. </p>
+  <p style="font-size:20px;"> The entire experiment should not last more than 20 minutes. You will be paid $3.00 USD for your participation. </p>
   <p style="font-size:20px;"> If you agree to participate, please click the button below to continue to experiment instructions.</p>
   `,
   choices: ['I agree to participate'],
@@ -109,10 +106,8 @@ var instructions2 = {
     }
 };
 
-    // these array can be passed into the preload plugin using the images, audio 
-    // and video parameters
     
-    var preload = {
+/*    var preload = {
         type: jsPsychPreload,
         images: images,
         show_progress_bar: false,
@@ -122,7 +117,7 @@ var instructions2 = {
         }
     };
 
-    
+    */
     
 
   var fixation1 = {
@@ -143,9 +138,9 @@ var instructions2 = {
     data: {
         typeoftrial: 'sentence',
         List: jsPsych.timelineVariable('List'),
-        trialcondition: jsPsych.timelineVariable('trialcondition'),
+        trialcondition: jsPsych.timelineVariable('Condition'),
         sentence: jsPsych.timelineVariable('sentence'),
-        object:jsPsych.timelineVariable('pic'),
+        object:jsPsych.timelineVariable('Picture'),
         subject: subject_id
       }
   }
@@ -170,18 +165,13 @@ var instructions2 = {
     data: {
         typeoftrial: 'picture',
         List: jsPsych.timelineVariable('List'),
-        trialcondition: jsPsych.timelineVariable('trialcondition'),
-        sentence: jsPsych.timelineVariable('sentence'),
-        object:jsPsych.timelineVariable('pic'),
-        index:jsPsych.timelineVariable('index'),
+        trialcondition: jsPsych.timelineVariable('Condition'),
+        sentence: jsPsych.timelineVariable('Sentence'),
+        object:jsPsych.timelineVariable('Picture'),
         subject: subject_id
       },
   prompt: '<br>S (yes)&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;N (no)',
   on_finish: function(data){
-    // for comprehension
-    last_trial_condition = data.trialcondition 
-    last_trial_index = data.index
-  // Score the response as correct or incorrect.
   if(jsPsych.pluginAPI.compareKeys(data.response, jsPsych.timelineVariable('correct'))){
     data.correct = true;
     
@@ -207,13 +197,13 @@ trial_duration: function(){
 }
 }
 
-  var practice_procedure = {
+ /* var practice_procedure = {
     timeline: [fixation1, sentence, fixation2, picture, feedback],
     timeline_variables: practicestimuli,
     randomize_order: true
   };
 
-  
+  */
   
 
   var movetoexp = {
@@ -448,25 +438,6 @@ var demo_procedure = {
     timeline: [demo_1, demo_2,demo_3, english, not_english_loop, demo_5]
   }
 
-  /*
-
-var save_data = {
-    type: jsPsychCallFunction,
-    func: function(){saveData(subject_id+".csv",
-      jsPsych.data.get().csv())}
-}
-
-function saveData(filename, filedata){
-  	$.ajax({
-  		type:'post',
-  		cache: false,
-  		url: 'save_data.php', // this is the path to the above PHP script
-      //url: https://script.google.com/macros/s/AKfycbzV--xTooSkBLufMs4AnrCTdwZxVNtycTE4JNtaCze2UijXAg8/exec
-  		data: {filename: filename, filedata: filedata}})
-  }
-
-*/
-  
   
 var completion_code = '<strong>Your completion code is: ' + subject_id + ". Please copy-paste this code and submit it on Canvas.</strong>"
 
@@ -481,12 +452,12 @@ var completion_code = '<strong>Your completion code is: ' + subject_id + ". Plea
 
   // add everything to timeline
 
-  timeline.push(preload);
+  //timeline.push(preload);
   timeline.push(consent_trial);
   timeline.push(ID);
   timeline.push(instructions1);
   timeline.push(instructions2);
-  timeline.push(practice_procedure);
+ // timeline.push(practice_procedure);
   timeline.push(movetoexp);
   timeline.push(test_procedure);
   timeline.push(demoinstructions)
