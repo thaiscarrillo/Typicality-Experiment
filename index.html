@@ -161,7 +161,7 @@ var instructions2 = {
       },
   prompt: '<br>S (yes)&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;N (no)',
   on_finish: function(data){
-  if(jsPsych.pluginAPI.compareKeys(data.response, jsPsych.timelineVariable('correct'))){
+  if(jsPsych.pluginAPI.compareKeys(data.response, jsPsych.timelineVariable('Correct'))){
     data.correct = true;
     
   } else {
@@ -380,7 +380,7 @@ var completion_code = '<strong>Your completion code is: ' + subject_id + ". Plea
 
 
   timeline.push(preload);
-  timeline.push(ID);
+  //timeline.push(ID);
   timeline.push(instructions1);
   timeline.push(instructions2);
   timeline.push(practice_procedure);
