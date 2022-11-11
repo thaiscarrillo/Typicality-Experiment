@@ -73,7 +73,6 @@ var ID = {
 var instructions1 = {
   type: jsPsychHtmlButtonResponse,
   stimulus: `
-  <p style="font-size:20px;"> Welcome to the experiment! </p>
   <p style="font-size:20px;"> In this experiment, you will be asked to make judgments about the content of different sentences.</p>
   <p style="font-size:20px;"> On each trial, you will read a sentence, and will be shown a picture immediately following the sentence. </p>
   <p style="font-size:20px;"> Your task is to decide whether the object displayed in the picture was mentioned in the sentence or not </p>
@@ -211,8 +210,6 @@ trial_duration: function(){
       stimulus: `<p style="font-size:20px;">You have now completed the practice session! </p>
       <p style="font-size:20px;">You will now move on to the main experiment, where you will not be provided any feedback. </p>
       <p style="font-size:20px;">Remember, you should press <strong>S</strong> if the pictured object was mentioned in the preceding sentence<br> and <strong>N</strong> if the pictured object was not mentioned in the preceding sentence.</p>
-      <p style="font-size:20px;">Please read the sentences carefully as you will be asked some <span style='color:#508AB0;'>comprehension questions </span> at random points during the experiment. </p>
-      <p style="font-size:20px;">For these questions, make sure you are answering yes/no based on the content mentioned in the sentence.</p>
       <p style="font-size:20px;">Please click the button below to continue to the main experiment. </p>`,
       choices: ['Continue'],
       data: {
@@ -221,64 +218,6 @@ trial_duration: function(){
       }
   };
 
-  
-  /*
-
-  // for the comprehension questions we need to keep a running counter of how many of each
-  // and only display the Q for 24
-  // but also randomly select any half of the filler trials
-
-  function range(start, end) {
-    return Array(end - start + 1).fill().map((_, idx) => start + idx)
-  }
-  var filler_indices = range(24, 71);
-
-  const shuffled = filler_indices.sort(() => 0.5 - Math.random());
-  // Get sub-array of first 24 elements after shuffled
-  let selected = shuffled.slice(0, 24);
-
-  var yes_q = 0
-  var no_q = 0
-  
-
-  var filler_comprehension = {
-    type: jsPsychHtmlKeyboardResponse,
-    stimulus: function(){
-      if(yes_q < no_q){
-        yes_q = yes_q + 1
-        chosen = "yes"
-        return jsPsych.timelineVariable('yes_font')
-      }
-      else{
-        no_q = no_q+1
-        chosen = "no"
-        return jsPsych.timelineVariable('no_font')
-      }
-    },
-  prompt: '<br>S (yes)&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;N (no)',
-  choices: ['S', 'N'],
-    data: {
-        typeoftrial: 'comprehension',
-        List: jsPsych.timelineVariable('List'),
-        trialcondition: jsPsych.timelineVariable('trialcondition'),
-        sentence: jsPsych.timelineVariable('sentence'),
-        object:jsPsych.timelineVariable('pic'),
-        subject: subject_id
-      },
-      on_finish: function(data){
-        if(chosen == "yes"){data.comprehension_type = "s"}
-        else{data.comprehension_type = "n"}
-      }
-}
-
-  var comprehension_loop = {
-    timeline: [filler_comprehension],
-    conditional_function: function() {
-    if(last_trial_condition == "filler" && selected.includes(last_trial_index)) {return true;} 
-    else {return false;}
-    }
-    }
-*/
   var teststimuli = []
   var list = [1,2,3,4]
 
@@ -304,7 +243,6 @@ trial_duration: function(){
   stimulus: `
   <p style="font-size:20px;"> You have completed the experiment portion! </p>
   <p style="font-size:20px;"> Before you are done, we would like you to answer some basic demographic questions. </p>
-  <p style="font-size:20px;"> Note that your answers to these questions will not affect your compensation/credit. </p>
   <p style="font-size:20px;"> While some questions are required (*) to obtain some basic information about our recruitment sample <p>
   <p style="font-size:20px;"> you can choose to skip other questions that you do not feel comfortable answering. </p>
   <p style="font-size:20px;"> Click the button below to continue.</p>
