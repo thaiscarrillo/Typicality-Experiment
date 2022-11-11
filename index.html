@@ -39,7 +39,6 @@ var subject_id = Math.floor(Math.random()*100000);
 var consent_trial = {
   type: jsPsychHtmlButtonResponse,
   stimulus: `
-  <p style="font-size:20px;"> Welcome! Thank you for your interest in our study. </p>
   <p style="font-size:20px;"> This study is being conducted by researchers at Bowdoin College.</p>
   <p style="font-size:20px;"> In this experiment, you will be asked to make judgments about the content of different sentences.</p>
   <p style="font-size:20px;"> The entire experiment should not last more than 20 minutes. You will be paid $3.00 USD for your participation. </p>
@@ -53,7 +52,7 @@ var consent_trial = {
 };
 
 
-var ID = {
+/* var ID = {
       type: jsPsychSurveyText,
       questions: [
         {prompt: 'Enter your Prolific ID below:', required: true, name: 'ID'},
@@ -69,7 +68,7 @@ var ID = {
 }
   };
 
-
+*/
 
 var instructions1 = {
   type: jsPsychHtmlButtonResponse,
