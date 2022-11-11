@@ -25,7 +25,7 @@ var list2 =
       "Sentence": "You drop a brick on a chocolate.",
       "Condition": "Atypical_Intact",
       "Correct": "N",
-      "Picture": "chocolatevarAN.jpeg",
+      "Picture": "chocolatebarAN.jpeg",
       "List": 2
     },
     {
@@ -165,7 +165,7 @@ var list2 =
       "Sentence": "You drop a brick on a cheeseburger.",
       "Condition": "Atypical_Smashed",
       "Correct": "S",
-      "Picture": "cheeseburgerAS.JPG",
+      "Picture": "burgerAS.JPG",
       "List": 2
     }
   ]

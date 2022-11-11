@@ -137,7 +137,7 @@ var list3 =
       "Sentence": "You drop a brick on an apple.",
       "Condition": "Typical_Intact",
       "Correct": "N",
-      "Picture": "appleN.jpg",
+      "Picture": "appleN.jpeg",
       "List": 3
     },
     {
