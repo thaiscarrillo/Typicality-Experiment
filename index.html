@@ -14,6 +14,8 @@
     <script src="https://unpkg.com/@jspsych/plugin-call-function@1.1.1"></script>
     <script src="https://unpkg.com/@jspsych/plugin-preload@1.1.1"></script>
     <link href="https://unpkg.com/jspsych@7.1.2/css/jspsych.css" rel="stylesheet" type="text/css" />
+    <script src="practice.js"></script>
+    <script src="images.js"></script>
     <script src="list1.js"></script>
     <script src="list2.js"></script>
     <script src="list3.js"></script>
@@ -34,7 +36,6 @@ var chosen = "X"
   
 var subject_id = Math.floor(Math.random()*100000);
 
-// declare the block.
 var consent_trial = {
   type: jsPsychHtmlButtonResponse,
   stimulus: `
@@ -106,7 +107,7 @@ var instructions2 = {
 };
 
     
-/*    var preload = {
+   var preload = {
         type: jsPsychPreload,
         images: images,
         show_progress_bar: false,
@@ -116,7 +117,7 @@ var instructions2 = {
         }
     };
 
-    */
+  
     
 
   var fixation1 = {
@@ -196,13 +197,13 @@ trial_duration: function(){
 }
 }
 
- /* var practice_procedure = {
+  var practice_procedure = {
     timeline: [fixation1, sentence, fixation2, picture, feedback],
-    timeline_variables: practicestimuli,
+    timeline_variables: practice,
     randomize_order: true
   };
 
-  */
+
   
 
   var movetoexp = {
@@ -395,7 +396,7 @@ var completion_code = '<strong>Your completion code is: ' + subject_id + ". Plea
   timeline.push(ID);
   timeline.push(instructions1);
   timeline.push(instructions2);
- // timeline.push(practice_procedure);
+  timeline.push(practice_procedure);
   timeline.push(movetoexp);
   timeline.push(test_procedure);
   timeline.push(demoinstructions)
