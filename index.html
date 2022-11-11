@@ -25,11 +25,13 @@
   <body></body>
   <script>
 
-var jsPsych = initJsPsych({
-      on_finish: function() {
-      }
-    });
+const jsPsych = initJsPsych({
+                on_finish: function() {
+                jsPsych.data.displayData();
 
+            }
+ });
+            
 var timeline = [];
 
 var chosen = "X"
@@ -108,8 +110,8 @@ var instructions2 = {
     
    var preload = {
         type: jsPsychPreload,
-        images: images,
-        show_progress_bar: false,
+        images: [images],
+        show_progress_bar: true,
         data: {
           typeoftrial: 'preload',
           subject: subject_id
@@ -230,7 +232,7 @@ trial_duration: function(){
 
 
   var test_procedure = {
-    timeline: [fixation1, sentence, fixation2, picture],
+    timeline: [fixation1, sentence, picture, fixation2],
     timeline_variables: teststimuli,
     randomize_order: true
   };
@@ -390,7 +392,7 @@ var completion_code = '<strong>Your completion code is: ' + subject_id + ". Plea
 
   // add everything to timeline
 
-  //timeline.push(preload);
+  timeline.push(preload);
   timeline.push(consent_trial);
   timeline.push(ID);
   timeline.push(instructions1);
