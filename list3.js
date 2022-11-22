@@ -44,42 +44,42 @@
     {
         "Sentence": "You drop a brick on a egg.",
         "Condition": "Atypical_Intact",
-        "Correct": "N",
+        "Correct": "S",
         "Picture": "eggAN.jpeg",
         "List": 3
     },
     {
         "Sentence": "You drop a brick on an ice cream.",
         "Condition": "Atypical_Intact",
-        "Correct": "N",
+        "Correct": "S",
         "Picture": "icecreamAN.jpeg",
         "List": 3
     },
     {
         "Sentence": "You drop a brick on a muffin.",
         "Condition": "Atypical_Intact",
-        "Correct": "N",
+        "Correct": "S",
         "Picture": "muffinAN.jpeg",
         "List": 3
     },
     {
         "Sentence": "You drop a brick on a strawberry.",
         "Condition": "Atypical_Intact",
-        "Correct": "N",
+        "Correct": "S",
         "Picture": "strawberryAN.jpeg",
         "List": 3
     },
     {
         "Sentence": "You drop a brick on a sushi.",
         "Condition": "Atypical_Intact",
-        "Correct": "N",
+        "Correct": "S",
         "Picture": "sushiAN.jpeg",
         "List": 3
     },
     {
         "Sentence": "You drop a brick on a tomato.",
         "Condition": "Atypical_Intact",
-        "Correct": "N",
+        "Correct": "S",
         "Picture": "tomatoAN.jpeg",
         "List": 3
     },
@@ -128,42 +128,42 @@
     {
         "Sentence": "You drop a brick on a watermelon.",
         "Condition": "Typical_Intact",
-        "Correct": "N",
+        "Correct": "S",
         "Picture": "watermelonN.jpg",
         "List": 3
     },
     {
         "Sentence": "You drop a brick on an apple.",
         "Condition": "Typical_Intact",
-        "Correct": "N",
-        "Picture": "appleN.jpg",
+        "Correct": "S",
+        "Picture": "appleN.jpeg",
         "List": 3
     },
     {
         "Sentence": "You drop a brick on a pomegranate.",
         "Condition": "Typical_Intact",
-        "Correct": "N",
+        "Correct": "S",
         "Picture": "pomegranateN.jpeg",
         "List": 3
     },
     {
         "Sentence": "You drop a brick on a kiwi.",
         "Condition": "Typical_Intact",
-        "Correct": "N",
+        "Correct": "S",
         "Picture": "kiwiN.jpeg",
         "List": 3
     },
     {
         "Sentence": "You drop a brick on a raspberry.",
         "Condition": "Typical_Intact",
-        "Correct": "N",
+        "Correct": "S",
         "Picture": "raspberryN.jpeg",
         "List": 3
     },
     {
         "Sentence": "You drop a brick on a cheeseburger.",
         "Condition": "Typical_Intact",
-        "Correct": "N",
+        "Correct": "S",
         "Picture": "burgerN.jpeg",
         "List": 3
     },
@@ -203,17 +203,17 @@
         "List": 3
     },
     {
-        "Sentence": "You see how a boy is peeling a banana",
+        "Sentence": "You see how a boy is playing with a toy tractor",
         "Condition": "filler",
         "Correct": "S",
-        "Picture": "banana.jpg",
+        "Picture": "tractor.jpg",
         "List": 3
     },
     {
-        "Sentence": "You see how an elephant is eating a watermelon",
+        "Sentence": "You see how an elephant is wearing a skirt",
         "Condition": "filler",
         "Correct": "S",
-        "Picture": "watermelon.jpg",
+        "Picture": "skirt.jpg",
         "List": 3
     },
     {
@@ -311,7 +311,7 @@
         "Sentence": "You drop a needle on the mouse pad",
         "Condition": "filler",
         "Correct": "N",
-        "Picture": "chocolate.jpg",
+        "Picture": "hairbrush.jpg",
         "List": 3
     },
     {
@@ -427,10 +427,10 @@
         "List": 3
     },
     {
-        "Sentence": "You see how a parrot is eating an apple",
+        "Sentence": "You see how a parrot flying in the rainforest",
         "Condition": "filler",
         "Correct": "N",
-        "Picture": "shirt.jpg",
+        "Picture": "shirt1.jpg",
         "List": 3
     },
     {

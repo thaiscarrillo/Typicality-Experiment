@@ -44,42 +44,42 @@
     {
         "Sentence": "You drop a brick on a egg.",
         "Condition": "Typical_Intact",
-        "Correct": "N",
+        "Correct": "S",
         "Picture": "eggN.jpg",
         "List": 1
     },
     {
         "Sentence": "You drop a brick on an ice cream.",
         "Condition": "Typical_Intact",
-        "Correct": "N",
+        "Correct": "S",
         "Picture": "icecreamN.jpg",
         "List": 1
     },
     {
         "Sentence": "You drop a brick on a muffin.",
         "Condition": "Typical_Intact",
-        "Correct": "N",
+        "Correct": "S",
         "Picture": "muffinN.jpg",
         "List": 1
     },
     {
         "Sentence": "You drop a brick on a strawberry.",
         "Condition": "Typical_Intact",
-        "Correct": "N",
+        "Correct": "S",
         "Picture": "strawberryN.jpg",
         "List": 1
     },
     {
         "Sentence": "You drop a brick on a sushi.",
         "Condition": "Typical_Intact",
-        "Correct": "N",
+        "Correct": "S",
         "Picture": "sushiN.jpg",
         "List": 1
     },
     {
         "Sentence": "You drop a brick on a tomato.",
         "Condition": "Typical_Intact",
-        "Correct": "N",
+        "Correct": "S",
         "Picture": "tomatoN.jpg",
         "List": 1
     },
@@ -115,7 +115,7 @@
         "Sentence": "You drop a brick on a potato chip.",
         "Condition": "Atypical_Smashed",
         "Correct": "S",
-        "Picture": "chipAS .JPG",
+        "Picture": "chipAS.jpg",
         "List": 1
     },
     {
@@ -128,43 +128,43 @@
     {
         "Sentence": "You drop a brick on a watermelon.",
         "Condition": "Atypical_Intact",
-        "Correct": "N",
+        "Correct": "S",
         "Picture": "watermelonAN.JPG",
         "List": 1
     },
     {
         "Sentence": "You drop a brick on an apple.",
         "Condition": "Atypical_Intact",
-        "Correct": "N",
+        "Correct": "S",
         "Picture": "appleAN.JPG",
         "List": 1
     },
     {
         "Sentence": "You drop a brick on a pomegranate.",
         "Condition": "Atypical_Intact",
-        "Correct": "N",
+        "Correct": "S",
         "Picture": "pomegranateAN.JPG",
         "List": 1
     },
     {
         "Sentence": "You drop a brick on a kiwi.",
         "Condition": "Atypical_Intact",
-        "Correct": "N",
+        "Correct": "S",
         "Picture": "kiwiAN.jpeg",
         "List": 1
     },
     {
         "Sentence": "You drop a brick on a raspberry.",
         "Condition": "Atypical_Intact",
-        "Correct": "N",
+        "Correct": "S",
         "Picture": "raspberryAN.jpeg",
         "List": 1
     },
     {
         "Sentence": "You drop a brick on a cheeseburger.",
         "Condition": "Atypical_Intact",
-        "Correct": "N",
-        "Picture": "cheeseburgerAN.jpeg",
+        "Correct": "S",
+        "Picture": "burgerAN.jpeg",
         "List": 1
     },
     {
@@ -203,17 +203,17 @@
         "List": 1
     },
     {
-        "Sentence": "You see how a boy is peeling a banana",
+        "Sentence": "You see how a boy is playing with a toy tractor",
         "Condition": "filler",
         "Correct": "S",
-        "Picture": "banana.jpg",
+        "Picture": "tractor.jpg",
         "List": 1
     },
     {
-        "Sentence": "You see how an elephant is eating a watermelon",
+        "Sentence": "You see how an elephant is wearing a skirt",
         "Condition": "filler",
         "Correct": "S",
-        "Picture": "watermelon.jpg",
+        "Picture": "skirt.jpg",
         "List": 1
     },
     {
@@ -311,7 +311,7 @@
         "Sentence": "You drop a needle on the mouse pad",
         "Condition": "filler",
         "Correct": "N",
-        "Picture": "chocolate.jpg",
+        "Picture": "hairbrush.jpg",
         "List": 1
     },
     {
@@ -427,10 +427,10 @@
         "List": 1
     },
     {
-        "Sentence": "You see how a parrot is eating an apple",
+        "Sentence": "You see how a parrot is flying in the rainforest",
         "Condition": "filler",
         "Correct": "N",
-        "Picture": "shirt.jpg",
+        "Picture": "shirt1.jpg",
         "List": 1
     },
     {
