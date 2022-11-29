@@ -115,7 +115,7 @@
         "Sentence": "You drop a brick on a potato chip.",
         "Condition": "Atypical_Smashed",
         "Correct": "S",
-        "Picture": "chipAS.jpg",
+        "Picture": "chipAS.JPG",
         "List": 1
     },
     {

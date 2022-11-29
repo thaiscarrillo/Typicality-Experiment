@@ -164,7 +164,7 @@
         "Sentence": "You drop a brick on a cheeseburger.",
         "Condition": "Atypical_Smashed",
         "Correct": "S",
-        "Picture": "burgerS.JPG",
+        "Picture": "burgerS.jpg",
         "List": 2
     },
     {
